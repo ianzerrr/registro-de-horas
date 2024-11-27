@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+        th { background-color: #f4f4f4; }
+        button { margin-top: 10px; padding: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Registros de Horas Trabalhadas</h1>
+
+    <table>
+        <tr>
+            <th>Data</th>
+            <th>Entrada</th>
+            <th>Saída</th>
+            <th>Horas Trabalhadas</th>
+            <th>Valor Acumulado (R$)</th>
+        </tr>
+        {% for registro in registros %}
+        <tr>
+            <td>{{ registro.data }}</td>
+            <td>{{ registro.entrada }}</td>
+            <td>{{ registro.saida }}</td>
+            <td>{{ registro.horas_trabalhadas }}</td>
+            <td>{{ registro.valor_acumulado }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <button onclick="window.location.href='/'">Voltar</button>
+</body>
+</html>
